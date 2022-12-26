@@ -1,7 +1,7 @@
 alias PointGuess.Repo
 alias PointGuess.Schema.User
 
-timestamps = DateTime.utc_now()
+timestamps = DateTime.utc_now() |> DateTime.truncate(:second)
 
 list_of_users =
   1..1_000_000

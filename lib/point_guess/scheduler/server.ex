@@ -1,5 +1,6 @@
 defmodule PointGuess.Scheduler.Server do
   @moduledoc """
+  PointGuess Server helps to schedule users points update and retrive user information
   """
   use GenServer
 
@@ -42,7 +43,7 @@ defmodule PointGuess.Scheduler.Server do
 
   @impl true
   def handle_info(:refresh, %{refresh_interval: refresh_interval} = state) do
-    Users.update_all_users_with_points()
+    {:ok, :updated_successfully} = Users.update_all_users_with_points()
 
     schedule_work(refresh_interval)
 

@@ -8,12 +8,10 @@ defmodule PointGuess.Schema.User do
 
   @type t :: %__MODULE__{}
 
-  @timestamps_opts [type: :utc_datetime_usec]
-
   schema "users" do
     field :points, :integer
 
-    timestamps()
+    timestamps(type: :utc_datetime, usec: true)
   end
 
   @spec changeset(user :: __MODULE__.t(), attrs :: map()) :: Ecto.Changeset.t()

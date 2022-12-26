@@ -25,3 +25,5 @@ config :logger, level: :warn
 
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :point_guess, PointGuess.Scheduler, adapter: PointGuess.SchedulerMock

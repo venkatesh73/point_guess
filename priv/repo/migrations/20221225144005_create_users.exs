@@ -5,7 +5,7 @@ defmodule PointGuess.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :points, :integer, null: false
 
-      timestamps()
+      timestamps(type: :utc_datetime, usec: true)
     end
 
     create constraint(:users, :points_between_zero_and_one_hundred,

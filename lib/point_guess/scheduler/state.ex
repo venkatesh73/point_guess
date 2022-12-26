@@ -1,4 +1,8 @@
 defmodule PointGuess.Scheduler.State do
+  @moduledoc """
+  PointGuess Scheduler State to manage Scheduler related configs
+  """
+
   defstruct max_number: nil, users: [], timestamp: nil, refresh_interval: nil
 
   @spec new(refresh_interval :: non_neg_integer(), max_number :: integer()) :: %__MODULE__{}
